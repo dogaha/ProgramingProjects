@@ -1,2 +1,0 @@
-party|False|aint no party like a diddy party
-test1|False|just testing
