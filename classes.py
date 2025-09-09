@@ -63,6 +63,7 @@ def select_user():
         print(f"[{i}] {re.sub(r'\.[^.]*$','',v)}")
         i+=1
     print(f"[{i}] Create A New User")
+    print(f"[{i+1}] Quit")
     
     index = None
     try:
@@ -72,7 +73,7 @@ def select_user():
         print("ERROR: Invalid Input\n")
         return select_user()
     while True:
-        if index == 0 or index > len(temp_arr)+1:
+        if index == 0 or index > len(temp_arr)+2:
             print("ERROR: Invalid Input\n")
             return select_user()
         elif index == len(temp_arr)+1:
@@ -80,6 +81,9 @@ def select_user():
             user = database(input("Enter your username: "))
             print()
             break
+        elif index == len(temp_arr)+2:
+            print("Quit To-Do-List")
+            return False,False
         else:
             user = database.users[temp_arr[index-1]]
             break

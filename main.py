@@ -12,6 +12,7 @@ def main():
     print("======To-Do-List======")
     classes.load_databases()
     user, entries = classes.select_user()
+    if user == False: return
     while True:
         # Select An Action
         print(f"What would you like to do {user.name}?")
