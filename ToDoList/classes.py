@@ -41,6 +41,8 @@ def save_databses():
     
 def load_databases():
     data_folder = "data"
+    if os.path.isdir(data_folder):
+        os.mkdir(data_folder)
     for filename in os.listdir(data_folder):
         # Add to database
         user = database(re.sub(r'\.[^.]*$','',filename))
